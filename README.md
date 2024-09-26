@@ -1,0 +1,6 @@
+[kitchen](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_01/kitchen/index.html) 
+[cars](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_01/cars/index.html)
+[food](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_01/food/index.html)
+[apples](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_02/apples.html/index.html)
+[planets](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_03/planets/index.html)
+[museme](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_04/museum/index.html)
