@@ -1,0 +1,239 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+}
+
+.hero {
+    position: relative;
+    height: 70vh;
+    background: url('images/apples.jpg') no-repeat center center/cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content title{
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content title .description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.block1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.left-text, .right-text {
+    width: 45%; /* Обидва блоки займають по 45% ширини контейнера */
+}
+
+.left-text p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.right-text p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+.featured-articles {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.featured-articles h2 {
+    margin-bottom: 30px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+}
+.container {
+    background-color: transparent; /* Відсутній фон */
+}
+
+.imagine1, .imagine2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: 3/4;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Встановлюємо стандартний порядок для блоку imagine1 */
+.imagine1 .image-container {
+    order: 1;
+}
+
+.imagine1 .text-container {
+    order: 2;
+}
+
+/* Змінюємо порядок для блоку imagine2: зображення справа, текст зліва */
+.imagine2 .image-container {
+    order: 2;
+}
+
+.imagine2 .text-container {
+    order: 1;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    max-width: 300px;
+    height: auto;
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.text-container {
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.newsletter {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+footer .footer-content .column {
+    flex: 1;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 20px;
+}

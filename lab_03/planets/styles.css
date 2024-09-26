@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.nav a {
+    color: #7a8599;
+    text-decoration: none;
+    margin-left: 20px;}
+  
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0D1B2A;
+        color: white;
+        padding: 20px;
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        font-size: 28px;
+        color: #E0E1DD;
+    }
+    
+    .highlight {
+        font-style: italic;
+        color: #A0D2DB;
+    }
+    
+    /* Секція фактів */
+    .facts {
+        display: grid;
+        grid-template-columns: 1fr; /* Одна колонка на маленьких екранах */
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .fact {
+        display: grid;
+        grid-template-columns: 1fr; /* Одна колонка на маленьких екранах */
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .fact-text {
+        background-color: #1B263B;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .fact h2 {
+        font-size: 22px;
+        color: #E0E1DD;
+    }
+    
+    .fact p {
+        font-size: 18px;
+        color: #B1B1B1;
+    }
+    
+    .fact img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    /* Адаптація для маленьких екранів */
+    @media (max-width: 599px) {
+        body {
+            background-color: white;
+            color: black;
+        }
+    
+        .fact-text {
+            background-color: #f0f0f0;
+            color: black;
+        }
+    
+        h1 {
+            color: black;
+        }
+    
+        .highlight {
+            color: #007acc; /* Блакитний для контрасту */
+        }
+    }
+    
+    /* Адаптація для середніх екранів (600px до 1024px) */
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .facts {
+            grid-template-columns: 1fr; /* Одна колонка для середніх екранів */
+        }
+    
+        .fact {
+            display: grid;
+            grid-template-columns: 1fr; /* Текст зверху, зображення знизу */
+            grid-template-rows: auto auto;
+        }
+    
+        .fact-text {
+            order: 1; /* Текст зверху */
+        }
+    
+        .fact-image {
+            order: 2; /* Зображення знизу */
+        }
+    }
+    
+    /* Адаптація для великих екранів */
+    @media (min-width: 1024px) {
+        .facts {
+            grid-template-columns: repeat(2, 1fr); /* Дві колонки для великих екранів */
+            gap: 40px;
+        }
+    
+        .fact {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto; /* Дві строки для тексту і фото */
+        }
+    
+        /* Для непарних фактів (зліва) - текст зверху, зображення знизу */
+        .fact:nth-child(odd) .fact-text {
+            order: 1; /* Текст залишається першим */
+        }
+    
+        .fact:nth-child(odd) .fact-image {
+            order: 2; /* Зображення після тексту */
+        }
+    
+        /* Для парних фактів (справа) - зображення зверху, текст знизу */
+        .fact:nth-child(even) .fact-text {
+            order: 2; /* Текст після зображення */
+        }
+    
+        .fact:nth-child(even) .fact-image {
+            order: 1; /* Зображення першим */
+        }
+    
+        h1 {
+            font-size: 36px;
+        }
+    
+        .fact h2 {
+            font-size: 26px;
+        }
+    
+        .fact p {
+            font-size: 20px;
+        }
+    }
