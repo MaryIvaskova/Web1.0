@@ -1,51 +1,51 @@
-/* Базові стилі для сторінки */
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Стилі для списків (папок та файлів) */
 ul {
-    list-style-type: none; /* Вимикаємо маркери списку */
-    padding-left: 20px;    /* Відступ для вкладених елементів */
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
 }
 
-/* Стилі для пунктів списку */
 li {
-    cursor: pointer;      /* Змінюємо курсор на "палець" */
-    margin-left: 20px;    /* Відступ для вкладених елементів */
-}
-
-/* Стиль для папок (жирний шрифт) */
-.folder {
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-/* Стиль для файлів (курсив) */
-.file {
-    font-style: italic;
+    cursor: pointer;
     margin-left: 20px;
 }
 
-/* Приховані елементи (закриті папки) */
-.hidden {
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.file {
+    font-style: italic;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #f0f0f0;
+}
+
+details > summary::-webkit-details-marker {
     display: none;
 }
 
-/* Іконка відкритої папки */
-.open::before {
-    content: '📂';  /* Іконка відкритої папки */
+details[open] > summary::before {
+    content: '📂';
     margin-right: 5px;
 }
 
-/* Іконка закритої папки */
-.closed::before {
-    content: '📁';  /* Іконка закритої папки */
+summary::before {
+    content: '📁';
     margin-right: 5px;
 }
 
-/* Іконка для файлів */
 .file::before {
-    content: '📄';  /* Іконка файлу */
+    content: '📄';
     margin-right: 5px;
 }

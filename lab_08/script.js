@@ -1,61 +1,65 @@
-// Структура папок і файлів
 const folderStructure = [
     {
         "Films": [
-            "Iron Man.avi",       // Файл в папці "Films"
+            "Iron Man.avi",
             {
-                "Fantasy": [       // Папка "Fantasy" всередині "Films"
-                    "The Lord of the Rings.avi",   // Файл в папці "Fantasy"
+                "Fantasy": [
+                    "The Lord of the Rings.avi",
                     {
-                        "New folder 1": []   // Порожня папка
+                        "New folder 1": []
                     }
                 ]
             }
         ]
     },
     {
-        "Documents": []   // Порожня папка "Documents"
+        "Documents": []
     }
 ];
 
-// Функція для створення дерева папок
+function clearSelection() {
+    document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+}
+
 function createFolderTree(structure, parent) {
-    const ul = document.createElement('ul'); // Створюємо новий елемент списку
+    const ul = document.createElement('ul');
     
     structure.forEach(item => { 
-        // Якщо це файл (рядок)
-        if (typeof item == 'string') {
-            const li = document.createElement('li');  // Створюємо новий пункт списку
-            li.classList.add('file');                 //  клас для стилізації файлу
-            li.textContent = item;                    //  назву файлу
-            ul.appendChild(li);                       //  файл до списку
+        if (typeof item === 'string') {
+            const li = document.createElement('li');
+            li.classList.add('file');
+            li.textContent = item;
+            
+            li.addEventListener('click', function (event) {
+                clearSelection();
+                li.classList.add('selected');
+                event.stopPropagation();
+            });
+
+            ul.appendChild(li);
         } else {
-            // Якщо це папка (об'єкт)
             for (const key in item) {
-                const li = document.createElement('li');  //  пункт списку для папки
-                li.classList.add('folder', 'closed');     //  класи для папки
-                li.textContent = key;                     //  назву папки
-                const sublist = createFolderTree(item[key], li); // Створюємо підсписок
-                sublist.classList.add('hidden');          // - підсписок спочатку
-                li.appendChild(sublist);                  //  підсписок до папки
-                ul.appendChild(li);                       //  папку до списку
+                const details = document.createElement('details');
+                const summary = document.createElement('summary');
+                summary.textContent = key;
                 
-                // Додаємо подію для відкриття/закриття папки
-                li.addEventListener('click', function (event) {
-                    sublist.classList.toggle('hidden');   // Відкриваємо/закриваємо папку
-                    li.classList.toggle('open');         // Змінюємо клас на відкриту
-                    li.classList.toggle('closed');       // Змінюємо клас на закриту
-                    event.stopPropagation();             // Зупиняємо сплив події
+                summary.addEventListener('click', function (event) {
+                    clearSelection();
+                    summary.classList.add('selected');
+                    event.stopPropagation();
                 });
+
+                details.appendChild(summary);
+                const sublist = createFolderTree(item[key], details);
+                details.appendChild(sublist);
+                ul.appendChild(details);
             }
         }
     });
 
-    parent.appendChild(ul); // Додаємо список до батьківського елемента
-    return ul;              // Повертаємо створений список
+    parent.appendChild(ul);
+    return ul;
 }
 
-// Знаходимо контейнер для відображення структури папок
 const fileExplorer = document.getElementById('file-explorer');
-// Створюємо дерево папок і файлів
 createFolderTree(folderStructure, fileExplorer);

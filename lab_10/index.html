@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Сітка (пазли)</title>
+</head>
+<body>
+    <h1>Найпопулярніші об'єкти</h1>
+    <div id="object-grid" class="grid"></div>
+
+    <div id="add-object-form" class="hidden">
+        <h2>Додати об'єкт</h2>
+        <input type="text" id="name" placeholder="Назва" required>
+        <input type="text" id="image_url" placeholder="URL зображення" required>
+        <button id="submit-object">Додати</button>
+        <button id="cancel-object-button">Скасувати</button>
+    </div>
+
+    <div id="object-details" class="hidden">
+        <h2 id="detail-name"></h2>
+        <img id="detail-image" alt="">
+        <h3>Опис:</h3>
+        <ul id="detail-description"></ul>
+        <h3>Атрибути:</h3>
+        <ul id="detail-attributes"></ul>
+        <button id="back-to-grid">Назад до сітки</button>
+    </div>
+
+    <button id="add-object-button">Додати об'єкт</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

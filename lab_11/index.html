@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings with Filters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Форма для додавання нової вакансії -->
+    <div id="jobFormContainer" class="job-form-container">
+        <h2>Add New Job</h2>
+        <form id="jobForm">
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required>
+
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" required>
+
+            <label for="posted">Posted (e.g., 1d ago):</label>
+            <input type="text" id="posted" name="posted" required>
+
+            <label for="contract">Contract Type:</label>
+            <select id="contract" name="contract">
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Contract">Contract</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="USA only">USA only</option>
+                <option value="Worldwide">Worldwide</option>
+                <option value="Remote">Remote</option>
+            </select>
+
+            <label for="tags">Tags (comma-separated):</label>
+            <input type="text" id="tags" name="tags" placeholder="e.g., Frontend, Senior">
+
+            <label for="new">New:</label>
+            <input type="checkbox" id="new" name="new">
+
+            <label for="featured">Featured:</label>
+            <input type="checkbox" id="featured" name="featured">
+
+            <label for="logo">Logo URL:</label>
+            <input type="url" id="logo" name="logo" placeholder="Enter logo URL or leave blank for default">
+
+            <button type="submit">Add Job</button>
+        </form>
+    </div>
+
+    <!-- Панель фільтрів -->
+    <div id="filterBar" class="filter-bar hidden">
+        <div id="selectedFilters"></div>
+        <button id="clearFilters" class="clear-button">Clear</button>
+    </div>
+
+    <!-- Список вакансій -->
+    <div id="jobListings" class="job-listings">
+        <!-- Вакансії будуть додані через JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
