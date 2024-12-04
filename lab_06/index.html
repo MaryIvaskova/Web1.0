@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>Ласкаво просимо до калькулятора</h1>
+    <p>Натисніть кнопку, щоб почати розрахунок.</p>
+    <button id="startCalculator">Запустити калькулятор</button>
+
+    <script>
+        // Код калькулятора
+        function calculator() {
+            let num1 = parseFloat(prompt("Введіть перше число:"));
+            let operator = prompt("Введіть операцію (+, -, *, /):");
+            let num2 = parseFloat(prompt("Введіть друге число:"));
+
+            let result;
+
+            switch(operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        alert("Помилка: на нуль ділити не можна!");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Невірний оператор!");
+                    return;
+            }
+
+            alert(`Результат: ${num1} ${operator} ${num2} = ${result}`);
+        }
+
+        // Обробник кнопки
+        document.getElementById("startCalculator").addEventListener("click", calculator);
+    </script>
+</body>
+</html>
