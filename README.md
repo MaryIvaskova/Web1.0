@@ -11,5 +11,5 @@
 [cards](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_09/index.html)
 [tanks](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_10/index.html)
 [jobs filter](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_11/index.html)
-[pokemon](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/Lab_12/index.html)
+[pokemon](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_12/index.html)
 [dummyjson](https://html-preview.github.io/?url=https://github.com/MaryIvaskova/Web1.0/blob/main/lab_13/index.html)
